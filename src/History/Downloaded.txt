@@ -1,0 +1,13 @@
+npm install react-router-dom
+
+npm install sass --save-dev
+npm uninstall sass --save-dev
+
+npm install react-simple-typewriter
+
+npm install swiper
+
+npm install react-icons --save
+npm uninstall react-icons --save
+
+npm install react-scroll

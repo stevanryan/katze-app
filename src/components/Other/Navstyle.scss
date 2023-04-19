@@ -1,0 +1,180 @@
+nav {
+  // margin: 0 auto;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  position: fixed;
+  z-index: 99;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .75);
+
+  .centered {
+      margin: 0 auto;
+      width: 1200px;
+      height: 72px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      // border: 1px solid #000;
+  }
+
+  .nav-title {
+      img {
+          width: 100px;
+      }
+  }
+
+  .main-nav {
+      // a {
+      //   font-size: 16px;
+      //   font-weight: 600;
+      //   color: #979797;
+      //   margin-left: 40px;
+      // }
+
+      // a:hover {
+      //   color: #000;
+      // }
+      display: flex;
+      flex-direction: row;
+      
+      a {
+        margin-left: 40px;
+      }
+
+      .home-link {
+        width: 36px;
+        height: 36px;
+        background-image: url(../../Images/icons/home-alt-2-regular-grey.png);
+        background-size: cover;
+      }
+      
+      .home-link:hover {
+        background-image: url(../../Images/icons/home-alt-2-solid-black.png);
+      }
+
+      .cart-link {
+        width: 36px;
+        height: 36px;
+        background-image: url(../../Images/icons/shopping-bag-regular-grey.png);
+        background-size: cover;
+
+        .count {
+          width: 24px;
+          height: 24px;
+          position: relative;
+          top: 20px;
+          left: 16px;
+          border-radius: 50%;
+          padding: 4px;
+          background: #3e3e3e;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+      
+      .cart-link:hover {
+        background-image: url(../../Images/icons/shopping-bag-regular-black.png);
+      }
+
+      .favourite-link {
+        width: 36px;
+        height: 36px;
+        background-image: url(../../Images/icons/heart-regular-grey.png);
+        background-size: cover;
+
+        .count {
+          width: 24px;
+          height: 24px;
+          position: relative;
+          top: 20px;
+          left: 16px;
+          border-radius: 50%;
+          padding: 4px;
+          background: #3e3e3e;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+      
+      .favourite-link:hover {
+        background-image: url(../../Images/icons/heart-solid-black.png);
+      }
+
+      .profile-link {
+        width: 36px;
+        height: 36px;
+        background-image: url(../../Images/icons/user-regular-grey.png);
+        background-size: cover;
+      }
+      
+      .profile-link:hover {
+        background-image: url(../../Images/icons/user-regular-black.png);
+      }
+  }
+}
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    position: fixed;
+    z-index: 99;
+
+    .centered {
+      margin: 0 auto;
+      width: 800px;
+      height: 72px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    position: fixed;
+    z-index: 99;
+
+    .centered {
+      margin: 0 auto;
+      width: 500px;
+      height: 72px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      // border: 1px solid #000;
+      // background-color: red;
+    }
+
+    .main-nav {
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #979797;
+        margin-left: 40px;
+        // display: none;
+      }
+
+      a:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.defaultColor {
+  color: #979797;
+}
+
+.newColor {
+  color: blue;
+  font-size: 100px;
+}
