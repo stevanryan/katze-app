@@ -11,7 +11,6 @@ const Cart = () => {
     cartLength,
     removeFromCart,
     addAmount,
-    amount,
     decreaseAmount
   } = useContext(FoodContext)
 
@@ -21,7 +20,6 @@ const Cart = () => {
   return (
     <div className="cart-page">
       {cartLength === 0 ? <h1>Cart is Empty, go add some!</h1> : <h1>Cart</h1>}
-      {/* <button onClick={handleButton}>Back to Home!</button> */}
 
       <div className="item-in-cart">
         {cartItems.map((item) => {
@@ -30,7 +28,7 @@ const Cart = () => {
               <img src={item.image} alt="" style={{height: '100px'}}/>
               <h3>{item.name}</h3>
               <p>Price ${item.price}</p>
-              <p className="amount">x {amount}</p>
+              <p className="amount">x {item.qty}</p>
               <p className="total-price">Total ${(item.price * item.qty).toFixed(2)}</p>
               <div className="cart-btn">
                 <button onClick={() => addAmount(item)}>+</button>
