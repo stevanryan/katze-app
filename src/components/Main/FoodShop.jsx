@@ -9,7 +9,8 @@ const FoodShop = () => {
   return (
     <div className="food-shop" id="food-shop">
       <h1>All of the Best Cat Foods!</h1>
-      <Swiper
+      <div className="food-swiper">
+        <Swiper
         centeredSlides={true}
         loop={true}
         slidesPerView={1}
@@ -19,13 +20,14 @@ const FoodShop = () => {
         }}
         modules={[Autoplay]}
         className='mySwipper'
-        style={{width: '1200px', marginBottom: '16px'}}
+        // style={{width: '1200px', marginBottom: '16px'}}
         >
         <SwiperSlide><p>These foods are certified!</p></SwiperSlide>
         <SwiperSlide><p>Really safe for your cats!</p></SwiperSlide>
         <SwiperSlide><p>Healthy foods are priority!</p></SwiperSlide>
         <SwiperSlide><p>Made with chosen ingredients!</p></SwiperSlide>
       </Swiper>
+      </div>
       <div className="cat-food">
         {Products.map((data) => {
           return(
