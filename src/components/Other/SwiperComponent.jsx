@@ -18,7 +18,7 @@ import cat8 from '../../Images/real-image/cat8.jpg'
 
 const SwiperComponent = () => {
   return (
-    <div className="landing-cat" style={{width: '1000px'}}>
+    <div className="landing-cat">
       <Swiper
         // spaceBetween={30}
         centeredSlides={true}
