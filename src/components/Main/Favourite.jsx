@@ -16,8 +16,8 @@ const Favourite = () => {
       <div className="item-in-favourite">
         {favouriteItems.map((item) => {
           return(
-            <div className="cart-food" key={item.id}>
-              <img src={item.image} alt="" style={{height: '100px'}}/>
+            <div className="favourite-food" key={item.id}>
+              <img src={item.image} alt="foodimg"/>
               <h3>{item.name}</h3>
               <div className="close-btn">
                 <button onClick={() => removeFromFav(item)}>Remove</button>
