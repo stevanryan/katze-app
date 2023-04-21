@@ -3,6 +3,7 @@
   // border: 1px solid red;
 }
 
+// Home Page
 .home-page {
   width: 1200px;
   margin: 0 auto;
@@ -14,6 +15,7 @@
     height: 720px;
 
     .landing-cat {
+      width: 1000px;
       position: absolute;
       top: 90px;
       left: -180px;
@@ -24,7 +26,7 @@
       }
 
       .swiper {
-          padding: 32px;
+        padding: 32px;
       }
     }
 
@@ -82,6 +84,12 @@
 
   h1 {
     margin-bottom: 24px;
+  }
+
+  .food-swiper {
+    margin: 0 auto;
+    width: 1200px;
+    margin-bottom: 16px;
   }
 
   .cat-food {
@@ -268,7 +276,7 @@
     flex-wrap: wrap;
   }
 
-  .cart-food {
+  .favourite-food {
     // Setup the looks
     display: grid;
     align-items: center;
@@ -284,6 +292,7 @@
 
     img {
       margin: 16px 0;
+      height: 100px;
       grid-area: image;
       justify-self: center;
     }
@@ -319,12 +328,148 @@
       }
     }
   }
+}
 
-  .item-prices {
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, .2);
-    border-radius: 12px;
-    margin: 12px;
-    padding: 18px;
-    width: 800px;
+// Media Queries
+// Home Page
+
+// Tablet
+
+// Mobile
+@media screen and (max-width: 576px) {
+  .home-page {
+    width: 100%;
+    
+    .landing {
+      height: 720px;
+
+      .landing-cat {
+        width: 400px;
+        top: 60px;
+        left: 10px;
+
+        img {
+          width: 300px;
+          border-radius: 30px;
+        }
+
+        .swiper {
+          padding: 32px;
+        }
+      }
+
+      .landing-title {
+        position: absolute;
+        top: 400px;
+        right: 40px;
+        left: 40px;
+
+        h1 {
+          font-size: 48px;
+          margin-right: 20px;
+        }
+
+        h2 {
+          margin-right: 32px;
+          padding: 40px 0px;
+          font-size: 24px;
+          font-weight: 300;
+        }
+
+        .line {
+          width: 122px;
+          margin: -36px 0 18px 176px;
+          border: 2px solid #3e3e3e;
+        }
+
+        .explore-btn {
+          top: 24px;
+          right: 32px;
+        }
+      }
+    }
+  }
+
+  // Food Shop
+  .food-shop {
+    h1 {
+      font-size: 26px;
+    }
+
+    .food-swiper {
+      margin: 0 auto;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+
+  // Cart
+  .cart-page {
+    .item-in-cart {
+      width: 100%;
+    }
+
+    .cart-food {
+      grid-template-columns: 100px 20px 1fr 1fr;
+      grid-template-areas: 
+        'image title title title'
+        'image title title title'
+        'price amount totalprice button'
+        'price amount totalprice button';
+      border-radius: 12px;
+      margin: 12px;
+      padding: 18px;
+      width: 85%;
+
+      p.amount {
+        grid-area: amount;
+        align-self: center;
+        justify-self: center;
+      }
+
+      .cart-btn {
+        grid-area: button;
+    
+        button {
+          font-size: 20px;
+          margin: 12px 6px 6px 6px;
+          padding: 0px 12px;
+        }
+      }
+      
+      .close-btn {
+        position: relative;
+
+        .rmv-item {
+          top: -180px;
+          left: -28px;
+        }
+      }
+    }
+
+    .item-prices {
+      margin: 12px;
+      padding: 18px;
+      width: 85%;
+    }
+  }
+
+  // Favourite
+  .favourite-page {
+    .item-in-favourite {
+      width: 100%;
+    }
+
+    .favourite-food {
+      width: 85%;
+      
+      .close-btn {
+        grid-area: button;
+
+        button {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
