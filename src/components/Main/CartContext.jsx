@@ -18,7 +18,7 @@ const CartContext = (props) => {
       }
     })
     if (isExist) { console.log('Items already added into your cart!'); return }
-    setCartItems([...cartItems, { ...product, isCart: true }])
+    setCartItems([...cartItems, product])
     console.log(cartItems)
   }
 
@@ -26,6 +26,7 @@ const CartContext = (props) => {
   const removeFromCart = (product) => {
     const afterDelete = cartItems.filter((item) => item.id !== product.id)
     setCartItems(afterDelete)
+    product.qty = 1
     console.log(afterDelete)
     console.log('Deleted Successfully!')
   }
@@ -53,6 +54,7 @@ const CartContext = (props) => {
   const [favouriteItems, setFavouriteItems] = useState([])
   const favouriteLength = favouriteItems.length
 
+  // Add the item into the favourite
   const addToFav = (product) => {
     let isExist = false;
     favouriteItems.forEach((item) => {
@@ -65,24 +67,12 @@ const CartContext = (props) => {
     setFavouriteItems([...favouriteItems, product])
   }
 
+  // Delete the item from favourite
   const removeFromFav = (product) => {
     const afterRemove = favouriteItems.filter((item) => item.id !== product.id)
     setFavouriteItems(afterRemove)
     console.log('Deleted Successfully!')
   }
-
-  const [added, setAdded] = useState(true)
-
-  // ...
-  const addedHandler = (data) => {
-    cartItems.forEach((item) => {
-      if (item.id === data.id) {
-        setAdded(!added)
-      }
-      return false
-    })
-  }
-  // ...
 
   const myFunction = { 
     cartItems, 
@@ -96,10 +86,6 @@ const CartContext = (props) => {
     favouriteLength,
     addToFav,
     removeFromFav,
-
-    added, // ...
-    setAdded, // ...
-    addedHandler // ...
   }
 
   return (
