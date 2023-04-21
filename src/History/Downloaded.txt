@@ -11,3 +11,8 @@ npm install react-icons --save
 npm uninstall react-icons --save
 
 npm install react-scroll
+
+npm install hamburger-react
+
+npm install react-responsive --save
+npm uninstall react-responsive --save
