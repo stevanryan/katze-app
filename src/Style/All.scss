@@ -173,7 +173,6 @@
   }
 
   .cart-food {
-    // Setup the looks
     display: grid;
     align-items: center;
     grid-template-columns: 190px 0.5fr 90px 132px 1fr;
@@ -277,7 +276,6 @@
   }
 
   .favourite-food {
-    // Setup the looks
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
@@ -331,12 +329,133 @@
 }
 
 // Media Queries
-// Home Page
-
 // Tablet
+@media screen and (max-width: 1024px) {
+  // Home Page
+  .home-page {
+    width: 600px;
+    
+    .landing {
+      height: 720px;
+  
+      .landing-cat {
+        width: 500px;
+        top: 60px;
+        left: 10%;
+
+        img {
+          width: 400px;
+          border-radius: 30px;
+        }
+      }
+  
+      .landing-title {
+        top: 420px;
+        right: 88px;
+  
+        h1 {
+          font-size: 60px;
+        }
+      }
+    }
+  }
+
+  // Food Shop
+  .food-shop {
+    .food-swiper {
+      width: 600px;
+    }
+
+    .cat-food {
+      justify-content: space-between;
+    }
+  }
+
+  .food-item {
+    border-radius: 12px;
+    margin: 12px;
+    padding: 18px;
+    width: 276px;
+  
+    .btn {
+      grid-template-columns: 1fr 0.5fr;
+  
+      button {
+        width: 172px;
+      }
+    }
+  }
+
+  // Cart
+  .cart-page {
+    padding-top: 120px;
+
+    .item-in-cart {
+      width: 100%;
+    }
+
+    .cart-food {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 0.5fr 90px 132px 1fr;
+      grid-template-areas: 
+        'image title title title title'
+        'image title title title title'
+        'image price amount totalprice button';
+      margin: 12px;
+      padding: 18px;
+      width: 90%;
+
+      p.amount {
+        grid-area: amount;
+        align-self: center;
+        justify-self: center;
+      }
+
+      .cart-btn {
+        grid-area: button;
+    
+        button {
+          font-size: 24px;
+          margin: 12px 6px 6px 6px;
+          padding: 0px 24px;
+        }
+      }
+      
+      .close-btn {
+        position: relative;
+
+        .rmv-item {
+          top: -124px;
+          left: -24px;
+        }
+      }
+    }
+
+    .item-prices {
+      width: 90%;
+    }
+  }
+
+  // Favourite
+  .favourite-page {
+    .item-in-favourite {
+      width: 100%;
+    }
+
+    .favourite-food {
+      width: 85%;
+      
+      .close-btn {
+        grid-area: button;
+      }
+    }
+  }
+}
 
 // Mobile
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 480px) {
+  // Home Page
   .home-page {
     width: 100%;
     

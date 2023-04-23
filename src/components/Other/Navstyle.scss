@@ -104,7 +104,7 @@ nav {
   } 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   nav {
     width: 100%;
     border-bottom: 1px solid #dddddd;
@@ -113,7 +113,7 @@ nav {
 
     .centered {
       margin: 0 auto;
-      width: 800px;
+      width: 90%;
       height: 72px;
       display: flex;
       flex-direction: row;
@@ -123,7 +123,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 480px) {
   nav {
     width: 100%;
     border-bottom: 1px solid #dddddd;
