@@ -1,18 +1,26 @@
 npm install react-router-dom
+npm uninstall react-router-dom
 
 npm install sass --save-dev
 npm uninstall sass --save-dev
 
 npm install react-simple-typewriter
+npm uninstall react-simple-typewriter
 
 npm install swiper
+npm uninstall swiper
 
 npm install react-icons --save
 npm uninstall react-icons --save
 
 npm install react-scroll
+npm uninstall react-scroll
 
 npm install hamburger-react
+npm uninstall hamburger-react
 
 npm install react-responsive --save
 npm uninstall react-responsive --save
+
+npm install --save react-toastify
+npm uninstall --save react-toastify
