@@ -1,16 +1,18 @@
-import Home from '../Main/Home';
-import Cart from '../Main/Cart';
-import Favourite from '../Main/Favourite';
-import Profile from '../Main/Profile';
-import './Navstyle.scss';
-import Katze from '../../Images/katze.png';
+import NavLink from './NavLink'
+import './Navstyle.scss'
+import Katze from '../../Images/katze.png'
 
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { FoodContext } from '../Main/CartContext';
+import { useState } from 'react'
+
+import { useMediaQuery } from 'react-responsive'
+import { Sling as Hamburger } from 'hamburger-react'
 
 const Navigation = () => {
-  const { cartLength, favouriteLength } = useContext(FoodContext)
+  const [display, setDisplay] = useState(false)
+  
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1280px)' })
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 480px)' })
 
   return(
     <nav>
@@ -18,23 +20,25 @@ const Navigation = () => {
         <div className="nav-title">
           <div className="katze-title"><img src={Katze} alt="Katze" /></div>
         </div>
-        <div className="main-nav">
-          <Link className='link' to={'/'} element={<Home />}><div className="home-link"></div></Link>
-          <Link className='link' to={'/cart'} element={<Cart />}>
-            <div className="cart-link">
-              {cartLength > 0 && <div className="count">{cartLength}</div>}
-            </div>
-          </Link>
-          <Link className='link' to={'/favourite'} element={<Favourite />}>
-            <div className="favourite-link">
-              {favouriteLength > 0 && <div className="count">{favouriteLength}</div>}
-            </div>
-          </Link>
-          <Link className='link' to={'/profile'} element={<Profile />}><div className="profile-link"></div></Link>
-        </div>  
+
+        {/* Big Screen Mode */}
+        {isBigScreen && <div className="main-nav">
+          <NavLink />
+        </div>}
+
+        {/* Tablet Mode */}
+        {isTablet && <div className="main-nav">
+          <NavLink />
+        </div>}
+
+        {/* Mobile Mode */}
+        {isMobile && <Hamburger color="#3e3e3e" rounded duration={.6} onToggle={toggled => {
+          toggled ? setDisplay(!display) : setDisplay(!display)
+        }}/>}
+        {display && isMobile && <div className="mobile-nav"><NavLink /></div>}
       </div>
     </nav>
   )
 }
 
-export default Navigation;
+export default Navigation
