@@ -11,7 +11,8 @@ const Navigation = () => {
   const [display, setDisplay] = useState(false)
   
   const isBigScreen = useMediaQuery({ query: '(min-width: 1280px)' })
-  const isTablet = useMediaQuery({ query: '(min-width: 768px)' })
+  const isTabletMin = useMediaQuery({ query: '(min-width: 768px)' })
+  const isTabletMax = useMediaQuery({ query: '(max-width: 1024px)' })
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' })
 
   return(
@@ -27,7 +28,7 @@ const Navigation = () => {
         </div>}
 
         {/* Tablet Mode */}
-        {isTablet && <div className="main-nav">
+        {isTabletMin && isTabletMax && <div className="main-nav">
           <NavLink />
         </div>}
 
