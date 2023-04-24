@@ -5,6 +5,9 @@ import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const FoodShop = () => {
   return (
     <div className="food-shop" id="food-shop">
@@ -36,6 +39,7 @@ const FoodShop = () => {
           )
         })}
       </div>
+      <ToastContainer pauseOnHover={false}/>
     </div>
   );
 }

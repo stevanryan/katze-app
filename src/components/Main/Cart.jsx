@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useContext } from 'react'
 import { FoodContext } from './CartContext'
+import { ToastContainer } from 'react-toastify'
 
 import closeButton from '../../Images/icons/x-regular-60.png'
 
@@ -50,6 +51,7 @@ const Cart = () => {
         {/* toFixed to fix the decimal of the number */}
         <h2>All total price : ${allPrice.toFixed(2)}</h2>
       </div>}
+      <ToastContainer pauseOnHover={false}/>
     </div>
   );
 }

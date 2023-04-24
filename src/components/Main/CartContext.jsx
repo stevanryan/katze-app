@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, createContext } from 'react';
 
+import { toast } from 'react-toastify'
+
 export const FoodContext = createContext(null)
 
 const CartContext = (props) => {
@@ -17,13 +19,19 @@ const CartContext = (props) => {
         isExist = true
       }
     })
-    if (isExist) { console.log('Items already added into your cart!'); return }
+    if (isExist) { 
+      toast.warn('Item already in the Cart!', { autoClose: 1500, position: 'bottom-right'}); 
+      console.log('Item already in the Cart!');
+      return 
+    }
     setCartItems([...cartItems, product])
+    toast.success('Succesfully added into the Cart!', { autoClose: 1500, position: 'bottom-right' })
     console.log(cartItems)
   }
 
   // Delete the item from cart
   const removeFromCart = (product) => {
+    toast.info('Item removed from the Cart!', { autoClose: 1500, position: 'bottom-right'})
     const afterDelete = cartItems.filter((item) => item.id !== product.id)
     setCartItems(afterDelete)
     product.qty = 1
@@ -65,10 +73,12 @@ const CartContext = (props) => {
       return
     }
     setFavouriteItems([...favouriteItems, product])
+    toast.success('Succesfully added into the Favourite!', { autoClose: 1500, position: 'bottom-right' })
   }
 
   // Delete the item from favourite
   const removeFromFav = (product) => {
+    toast.info('Item removed from Favourite!', { autoClose: 1500, position: 'bottom-right'})
     const afterRemove = favouriteItems.filter((item) => item.id !== product.id)
     setFavouriteItems(afterRemove)
     console.log('Deleted Successfully!')

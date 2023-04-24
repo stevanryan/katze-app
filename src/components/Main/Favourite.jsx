@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { FoodContext } from "./CartContext";
+import { useContext } from "react"
+import { FoodContext } from "./CartContext"
+import { ToastContainer } from "react-toastify"
 
 const Favourite = () => {
   const {
@@ -27,8 +28,10 @@ const Favourite = () => {
           )
         })}
       </div>
+
+      <ToastContainer pauseOnHover={false}/>
     </div>
   );
 }
 
-export default Favourite;
+export default Favourite
