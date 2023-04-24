@@ -520,6 +520,20 @@
       width: 100%;
       margin-bottom: 16px;
     }
+
+    .cat-food {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .food-item {
+    width: 70%;
+
+    .btn {
+      grid-template-columns: 1fr 40px;
+    }
   }
 
   // Cart
