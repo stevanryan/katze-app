@@ -24,3 +24,9 @@ npm uninstall react-responsive --save
 
 npm install --save react-toastify
 npm uninstall --save react-toastify
+
+npm install axios
+npm uninstall axios
+
+npm install @tanstack/react-query
+npm uninstall @tanstack/react-query
