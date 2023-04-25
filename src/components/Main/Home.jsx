@@ -1,6 +1,7 @@
 import '../../Style/All.scss'
 import SwiperComponent from '../Other/SwiperComponent'
 import FoodShop from './FoodShop'
+import CatFactAPI from '../Other/CatFactAPI'
 
 import { Typewriter } from 'react-simple-typewriter'
 import { Link as ReactScroll } from 'react-scroll'
@@ -39,6 +40,7 @@ const Home = () => {
         </div>
       </div>
       <FoodShop />
+      <CatFactAPI />
     </div>
   );
 }
